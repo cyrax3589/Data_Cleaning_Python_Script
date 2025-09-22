@@ -62,5 +62,7 @@ The following operations were performed in `data_cleaner.py`:
 
 ├── data_cleaner.py 
 
-├── README.md 
+├── README.md
+
+├── Requirements.txt
 
