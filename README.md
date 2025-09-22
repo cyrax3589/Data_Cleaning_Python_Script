@@ -57,7 +57,10 @@ The following operations were performed in `data_cleaner.py`:
 ## 📂 Repository Structure
 
 ├── dataset.csv # Original raw dataset
+
 ├── cleaned_dataset.csv # Cleaned dataset (output)
+
 ├── data_cleaner.py # Python script for cleaning
+
 ├── README.md # Project documentation
 
