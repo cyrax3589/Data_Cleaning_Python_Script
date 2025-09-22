@@ -1,60 +1,40 @@
-# 🩺 Medical Appointment No-Shows – Data Cleaning
+# 🧹 Data Cleaning Project – Medical Appointment No Shows  
 
-This project focuses on cleaning the **Medical Appointment No-Shows Dataset** from Kaggle.  
-The dataset contains information about patients in Brazil and whether they showed up for their scheduled medical appointments.  
+This project is all about **cleaning messy datasets** and getting them ready for analysis.  
+I started with the **Medical Appointment No Shows dataset** from Kaggle, which contains details about patients in Brazil and whether they showed up for their doctor’s appointments.  
 
-👉 Dataset source: [Kaggle – Medical Appointment No Shows](https://www.kaggle.com/datasets/joniarroba/noshowappointments)
-
----
-
-## 📌 Project Overview
-The raw dataset contains missing values, inconsistent formatting, incorrect data types, and noisy entries.  
-The goal of this project is to **clean and preprocess the dataset** so it can be reliably used for **exploratory data analysis (EDA) and machine learning models**.
+The raw data wasn’t perfect — it had duplicates, inconsistent values, weird data types, and some noisy entries.  
+The goal here was simple: **turn it into a clean, reliable dataset** that’s easy to work with.  
 
 ---
 
-## 🛠 Data Cleaning Steps
-The following operations were performed in `data_cleaner.py`:
+## ✨ What I Did
+Here’s a quick breakdown of the cleaning process in `data_cleaner.py`:
 
-1. **Standardized column names**  
-   - Converted to lowercase, replaced spaces with underscores.
+- ✅ **Renamed columns** to lowercase and replaced spaces with underscores.  
+- ✅ **Handled missing values** → filled numbers with the mean, and text with the most common value.  
+- ✅ **Removed duplicates** so every record is unique.  
+- ✅ **Cleaned up categorical text** → like gender (`M`, `m`, `Male` → `male`).  
+- ✅ **Fixed dates** → converted appointment and scheduling dates into proper datetime format.  
+- ✅ **Corrected data types** → IDs as integers, ages as small integers, and “no-show” turned into 0/1.  
+- ✅ **Simplified special columns** → `handcap` is now just 0 or 1.  
+- ✅ **Removed invalid values** → e.g., negative ages.  
 
-2. **Handled categorical text**  
-   - Stripped spaces, converted to lowercase.  
-   - Normalized `gender` values (`m`, `f` → `male`, `female`).  
-   - Converted `no-show` column to binary (0 = no, 1 = yes).
-
-3. **Missing values treatment**  
-   - Numeric columns: filled with mean.  
-   - Categorical columns: filled with mode.
-
-4. **Duplicate removal**  
-   - Dropped all duplicate rows.
-
-5. **Date parsing**  
-   - Converted `scheduledday` and `appointmentday` to `datetime`.
-
-6. **Data type corrections**  
-   - `patientid` → int64  
-   - `age` → int8 (removed invalid ages < 0)  
-   - `handcap` → binary (0 = no, 1 = yes)  
-   - `no-show` → int8  
-
-7. **Exported final dataset**  
-   - Cleaned data saved as `cleaned_dataset.csv`.
+At the end, the dataset was exported as `cleaned_dataset.csv`.
 
 ---
 
-## 📊 Data Quality Report (After Cleaning)
-- **Shape:** 110,527 rows × 14 columns  
-- **No missing values** ✅  
-- **No duplicate rows** ✅  
-- **All columns properly typed** ✅  
-- **Categorical values standardized** ✅  
+## 📊 Final Results
+- **Rows:** 110,527  
+- **Columns:** 14  
+- **Missing values:** 0  
+- **Duplicates:** 0  
+- **Data types:** all fixed and consistent  
+- **Categorical values:** standardized and cleaned  
 
 ---
 
-## 📂 Repository Structure
+## 📂 Repo Contents
 
 ├── dataset.csv 
 
@@ -65,4 +45,3 @@ The following operations were performed in `data_cleaner.py`:
 ├── README.md
 
 ├── Requirements.txt
-
